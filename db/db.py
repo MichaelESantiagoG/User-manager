@@ -2,6 +2,7 @@ import random
 import sqlite3 as sql
 from faker import Faker
 
+
 fake = Faker()
 
 conn = sql.connect("db/users.db", check_same_thread=False)
@@ -14,7 +15,7 @@ class Usuarios_db:
         self.Puesto = Puesto
         self.Departamento = Departamento
 
-    def format(data):
+    def format(data):  # private property
         formated_data = {}
         for user in data:
             formated_data[user[0]] = (user[1], user[2], user[3])
@@ -128,7 +129,7 @@ class Usuarios_db:
             ).fetchall()
         )
 
-    def Get_User(user_id):
+    def Get_User(user_id: int):
         return Usuarios_db.format(
             cursor.execute(
                 f"""SELECT ID, Nombre, Puesto, Departamento FROM Usuarios WHERE ID = {user_id}"""
@@ -136,24 +137,18 @@ class Usuarios_db:
         )
 
     def Insert_User(Nombre: str, Puesto: str, Departamento: str):
-        user = Usuarios_db(
-            Nombre=Nombre,
-            Departamento=Departamento,
-            Puesto=Puesto,
-        )
         cursor.execute(
-            f"""
-                INSERT INTO Usuarios(Nombre, Puesto, Departamento)
-                    Values('{Nombre}', '{Puesto}', '{Departamento}')"""
+            f"""INSERT INTO Usuarios(Nombre, Puesto, Departamento) Values('{Nombre}', '{Puesto}', '{Departamento}')"""
         )
         conn.commit()
 
-    def Edit_User(updated_user_info: "Usuarios_db"):
+    def Update_User(user_id: int, Nombre: str, Puesto: str, Departamento: str):
         cursor.execute(
             f"""UPDATE Usuarios
-                    SET Nombre='{updated_user_info.Nombre}',
-                        Puesto='{updated_user_info.Puesto}',
-                        Departamento='{updated_user_info.Departamento}',
+                    SET Nombre='{Nombre}',
+                        Puesto='{Puesto}',
+                        Departamento='{Departamento}'
+                WHERE ID = {user_id}
                         """
         )
         conn.commit()

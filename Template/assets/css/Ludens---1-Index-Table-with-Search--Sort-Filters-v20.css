@@ -1,4 +1,5 @@
-#ipi-table > thead > tr, #ipi-table > thead > tr > td {
+#ipi-table>thead>tr,
+#ipi-table>thead>tr>td {
   font-size: .9em;
   font-weight: 400;
   background: #51596a;
@@ -6,9 +7,9 @@
   color: #ffffff;
 }
 
-#ipi-table > tbody > tr > td {
+#ipi-table>tbody>tr>td {
   max-height: 200px;
-  vertical-align: middle!important;
+  vertical-align: middle !important;
 }
 
 .checkboxHover:hover {
@@ -33,7 +34,9 @@
   transition-duration: .3s !important;
 }
 
-.btnNoBorders, .btnNoBorders:focus, .btnNoBorders:active {
+.btnNoBorders,
+.btnNoBorders:focus,
+.btnNoBorders:active {
   outline: none;
   -moz-outline-style: none;
 }
@@ -44,7 +47,7 @@
   right: 2%;
 }
 
-.image-upload > input {
+.image-upload>input {
   display: none;
 }
 
@@ -106,7 +109,7 @@
   text-align: center !important;
   font-weight: 400 !important;
   font-size: 14px !important;
-  color: #212121v !important;
+  color: #212121 !important;
   background-image: none !important;
   background-color: transparent !important;
   -webkit-border-radius: 2px !important;
@@ -134,7 +137,11 @@
   background-color: #EC407A;
 }
 
-.btn-accent:hover, .btn-accent:focus, .btn-accent.focus, .btn-accent:active, .btn-accent.active {
+.btn-accent:hover,
+.btn-accent:focus,
+.btn-accent.focus,
+.btn-accent:active,
+.btn-accent.active {
   color: #ffffff;
   background-color: #E91E63;
 }
@@ -155,7 +162,11 @@
   background-color: rgba(33, 33, 33, 0.1);
 }
 
-.btn-flat:hover, .btn-flat:focus, .btn-flat.focus, .btn-flat:active, .btn-flat.active {
+.btn-flat:hover,
+.btn-flat:focus,
+.btn-flat.focus,
+.btn-flat:active,
+.btn-flat.active {
   color: #212121;
 }
 
@@ -205,7 +216,7 @@
   font-size: 36px;
 }
 
-.btn-action .waves, .btn-action-lg .waves {
+.btn-action .waves,
+.btn-action-lg .waves {
   display: none;
 }
-
